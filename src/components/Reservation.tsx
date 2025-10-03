@@ -40,7 +40,10 @@ const Reservation = () => {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
+        <div 
+          className="text-center mb-16"
+          data-aos="fade-down"
+        >
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
             Reserve Your{' '}
             <span className="text-transparent bg-gradient-gold bg-clip-text">
@@ -53,7 +56,11 @@ const Reservation = () => {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto">
+        <div 
+          className="max-w-2xl mx-auto"
+          data-aos="zoom-in"
+          data-aos-delay="200"
+        >
           <Card className="bg-card/50 backdrop-blur-sm border-border shadow-elegant">
             <CardHeader className="text-center">
               <CardTitle className="font-heading text-2xl text-foreground">

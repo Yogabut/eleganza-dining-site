@@ -59,7 +59,10 @@ const Menu = () => {
   return (
     <section id="menu" className="py-20 bg-background">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div 
+          className="text-center mb-16"
+          data-aos="fade-up"
+        >
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
             Our{' '}
             <span className="text-transparent bg-gradient-gold bg-clip-text">
@@ -77,10 +80,9 @@ const Menu = () => {
             <Card 
               key={item.id}
               className="group bg-card border-border hover:border-primary/20 transition-all duration-500 hover:shadow-gold hover:scale-105 overflow-hidden"
-              style={{
-                transform: `translateY(${parallaxOffset * (0.1 * (index % 3))}px)`,
-                transition: 'transform 0.1s ease-out'
-              }}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+              data-aos-duration="800"
             >
               <div className="relative overflow-hidden">
                 <img

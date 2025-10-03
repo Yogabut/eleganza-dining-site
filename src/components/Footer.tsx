@@ -6,7 +6,10 @@ const Footer = () => {
       <div className="container mx-auto px-6 py-16">
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div 
+            className="lg:col-span-1"
+            data-aos="fade-up"
+          >
             <h3 className="font-heading text-2xl font-bold text-primary mb-4">
               Eleganza
             </h3>
@@ -34,7 +37,11 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="lg:col-span-1">
+          <div 
+            className="lg:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
             <h4 className="font-heading text-lg font-semibold text-foreground mb-4">
               Contact Information
             </h4>
@@ -66,7 +73,11 @@ const Footer = () => {
           </div>
 
           {/* Opening Hours */}
-          <div className="lg:col-span-1">
+          <div 
+            className="lg:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             <h4 className="font-heading text-lg font-semibold text-foreground mb-4">
               Opening Hours
             </h4>
@@ -92,7 +103,11 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-1">
+          <div 
+            className="lg:col-span-1"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
             <h4 className="font-heading text-lg font-semibold text-foreground mb-4">
               Quick Links
             </h4>

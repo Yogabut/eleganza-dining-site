@@ -23,23 +23,38 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <div className="animate-fade-in">
-          <h1 className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight">
+        <div>
+          <h1 
+            className="font-heading text-5xl md:text-7xl font-bold text-foreground mb-6 leading-tight"
+            data-aos="fade-down"
+            data-aos-duration="1200"
+          >
             Benvenuti al{' '}
-            <span className="text-transparent bg-gradient-gold bg-clip-text">
+            <span 
+              className="text-transparent bg-gradient-gold bg-clip-text"
+              data-aos="zoom-in"
+              data-aos-delay="300"
+            >
               Ristorante Eleganza
             </span>
           </h1>
           
-          <p className="font-body text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p 
+            className="font-body text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
             Authentic Italian Cuisine with a Modern Touch
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div 
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
             <Button 
               variant="hero" 
               size="lg"
-              className="animate-scale-in"
               onClick={() => document.getElementById('reservation')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Reserve a Table
@@ -48,7 +63,6 @@ const Hero = () => {
             <Button 
               variant="elegant" 
               size="lg"
-              className="animate-scale-in"
               onClick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}
             >
               View Menu

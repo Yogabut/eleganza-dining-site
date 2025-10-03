@@ -46,7 +46,10 @@ const Gallery = () => {
   return (
     <section className="py-20 bg-gradient-elegant relative overflow-hidden">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div 
+          className="text-center mb-16"
+          data-aos="fade-down"
+        >
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
             Gallery of{' '}
             <span className="text-transparent bg-gradient-gold bg-clip-text">
@@ -60,8 +63,9 @@ const Gallery = () => {
         </div>
 
         <div 
-          className="max-w-4xl mx-auto transition-transform duration-100"
-          style={{ transform: `translateY(${parallaxOffset * -0.3}px)` }}
+          className="max-w-4xl mx-auto"
+          data-aos="zoom-in-up"
+          data-aos-delay="300"
         >
           {/* Main Image Display */}
           <div className="relative mb-8 group">
