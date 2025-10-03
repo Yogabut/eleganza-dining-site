@@ -1,6 +1,10 @@
+import { useParallax } from '@/hooks/use-parallax';
+
 const About = () => {
+  const parallaxOffset = useParallax(0.3);
+
   return (
-    <section id="about" className="py-20 bg-gradient-elegant">
+    <section id="about" className="py-20 bg-gradient-elegant relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
@@ -44,9 +48,12 @@ const About = () => {
             </div>
           </div>
 
-          {/* Image */}
+          {/* Image with Parallax */}
           <div className="relative">
-            <div className="relative overflow-hidden rounded-xl shadow-elegant">
+            <div 
+              className="relative overflow-hidden rounded-xl shadow-elegant transition-transform duration-100"
+              style={{ transform: `translateY(${parallaxOffset * -0.5}px)` }}
+            >
               <img
                 src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?auto=format&fit=crop&w=800&q=80"
                 alt="Chef preparing authentic Italian cuisine"

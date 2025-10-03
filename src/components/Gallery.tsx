@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useParallax } from '@/hooks/use-parallax';
 
 const Gallery = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const parallaxOffset = useParallax(0.2);
 
   const galleryImages = [
     {
@@ -42,7 +44,7 @@ const Gallery = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-elegant">
+    <section className="py-20 bg-gradient-elegant relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-heading text-4xl md:text-5xl font-bold text-foreground mb-6">
@@ -57,14 +59,17 @@ const Gallery = () => {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
+        <div 
+          className="max-w-4xl mx-auto transition-transform duration-100"
+          style={{ transform: `translateY(${parallaxOffset * -0.3}px)` }}
+        >
           {/* Main Image Display */}
           <div className="relative mb-8 group">
             <div className="relative overflow-hidden rounded-xl shadow-elegant h-[500px]">
               <img
                 src={galleryImages[currentImage].url}
                 alt={galleryImages[currentImage].title}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent"></div>
               

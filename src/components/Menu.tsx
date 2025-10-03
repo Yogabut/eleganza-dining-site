@@ -1,6 +1,10 @@
 import { Card, CardContent } from '@/components/ui/card';
 
+import { useParallax } from '@/hooks/use-parallax';
+
 const Menu = () => {
+  const parallaxOffset = useParallax(0.15);
+
   const menuItems = [
     {
       id: 1,
@@ -69,10 +73,14 @@ const Menu = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {menuItems.map((item) => (
+          {menuItems.map((item, index) => (
             <Card 
               key={item.id}
               className="group bg-card border-border hover:border-primary/20 transition-all duration-500 hover:shadow-gold hover:scale-105 overflow-hidden"
+              style={{
+                transform: `translateY(${parallaxOffset * (0.1 * (index % 3))}px)`,
+                transition: 'transform 0.1s ease-out'
+              }}
             >
               <div className="relative overflow-hidden">
                 <img

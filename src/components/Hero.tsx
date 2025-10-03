@@ -1,16 +1,22 @@
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-restaurant.jpg';
+import { useParallax } from '@/hooks/use-parallax';
 
 const Hero = () => {
+  const parallaxOffset = useParallax(0.5);
+
   return (
     <section 
       id="home" 
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Background Image with Parallax */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-100"
+        style={{ 
+          backgroundImage: `url(${heroImage})`,
+          transform: `translateY(${parallaxOffset}px) scale(1.1)`
+        }}
       >
         <div className="absolute inset-0 bg-gradient-hero"></div>
       </div>
