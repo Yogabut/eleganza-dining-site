@@ -3,8 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import { Calendar, Clock, Users, CheckCircle2 } from 'lucide-react';
+import { SuccessDialog } from '@/components/ui/success-dialog';
+import { Calendar, Clock, Users } from 'lucide-react';
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -195,30 +195,12 @@ const Reservation = () => {
         </div>
       </div>
 
-      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
-        <DialogContent className="sm:max-w-md">
-          <DialogHeader className="text-center items-center">
-            <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
-              <CheckCircle2 className="w-10 h-10 text-primary" />
-            </div>
-            <DialogTitle className="text-2xl font-heading">
-              Reservasi Berhasil!
-            </DialogTitle>
-            <DialogDescription className="text-base mt-4">
-              Terima kasih telah melakukan reservasi. Kami akan mengirimkan konfirmasi ke email Anda segera.
-            </DialogDescription>
-          </DialogHeader>
-          <div className="mt-6">
-            <Button 
-              onClick={() => setShowSuccessDialog(false)}
-              variant="hero"
-              className="w-full"
-            >
-              Tutup
-            </Button>
-          </div>
-        </DialogContent>
-      </Dialog>
+      <SuccessDialog
+        open={showSuccessDialog}
+        onOpenChange={setShowSuccessDialog}
+        title="Reservasi Berhasil!"
+        description="Terima kasih telah melakukan reservasi. Kami akan mengirimkan konfirmasi ke email Anda segera."
+      />
     </section>
   );
 };
