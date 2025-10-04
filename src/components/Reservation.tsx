@@ -3,7 +3,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Calendar, Clock, Users } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog';
+import { Calendar, Clock, Users, CheckCircle2 } from 'lucide-react';
 
 const Reservation = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,7 @@ const Reservation = () => {
     time: '',
     guests: ''
   });
+  const [showSuccessDialog, setShowSuccessDialog] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -24,9 +26,16 @@ const Reservation = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log('Reservation submitted:', formData);
-    alert('Grazie! Your reservation request has been submitted.');
+    setShowSuccessDialog(true);
+    // Reset form
+    setFormData({
+      name: '',
+      email: '',
+      date: '',
+      time: '',
+      guests: ''
+    });
   };
 
   return (
@@ -185,6 +194,31 @@ const Reservation = () => {
           </Card>
         </div>
       </div>
+
+      <Dialog open={showSuccessDialog} onOpenChange={setShowSuccessDialog}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader className="text-center items-center">
+            <div className="mx-auto mb-4 w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center">
+              <CheckCircle2 className="w-10 h-10 text-primary" />
+            </div>
+            <DialogTitle className="text-2xl font-heading">
+              Reservasi Berhasil!
+            </DialogTitle>
+            <DialogDescription className="text-base mt-4">
+              Terima kasih telah melakukan reservasi. Kami akan mengirimkan konfirmasi ke email Anda segera.
+            </DialogDescription>
+          </DialogHeader>
+          <div className="mt-6">
+            <Button 
+              onClick={() => setShowSuccessDialog(false)}
+              variant="hero"
+              className="w-full"
+            >
+              Tutup
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
