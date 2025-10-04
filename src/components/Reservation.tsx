@@ -198,8 +198,8 @@ const Reservation = () => {
       <SuccessDialog
         open={showSuccessDialog}
         onOpenChange={setShowSuccessDialog}
-        title="Reservasi Berhasil!"
-        description="Terima kasih telah melakukan reservasi. Kami akan mengirimkan konfirmasi ke email Anda segera."
+        title="Reservation Confirmed!"
+        description="Thank you for choosing Eleganza Dining. We look forward to serving you, Ciao!"
       />
     </section>
   );

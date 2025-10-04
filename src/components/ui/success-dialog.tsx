@@ -15,7 +15,7 @@ export function SuccessDialog({
   onOpenChange, 
   title, 
   description, 
-  buttonText = 'Tutup' 
+  buttonText = 'Close' 
 }: SuccessDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -27,7 +27,7 @@ export function SuccessDialog({
           <DialogTitle className="text-2xl font-heading">
             {title}
           </DialogTitle>
-          <DialogDescription className="text-base mt-4">
+          <DialogDescription className="text-base mt-4 text-center text-muted-foreground">
             {description}
           </DialogDescription>
         </DialogHeader>
