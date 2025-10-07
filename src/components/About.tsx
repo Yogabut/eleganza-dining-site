@@ -2,7 +2,6 @@ import { useParallax } from '@/hooks/use-parallax';
 
 const About = () => {
   const parallaxOffset = useParallax(0.3);
-
   return (
     <section id="about" className="py-20 bg-gradient-elegant relative overflow-hidden">
       <div className="container mx-auto px-6">

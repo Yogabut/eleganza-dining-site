@@ -1,5 +1,4 @@
 import { Card, CardContent } from '@/components/ui/card';
-
 import { useParallax } from '@/hooks/use-parallax';
 
 const Menu = () => {

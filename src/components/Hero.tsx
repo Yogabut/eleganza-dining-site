@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-restaurant.jpg';
 import { useParallax } from '@/hooks/use-parallax';
 
+
 const Hero = () => {
   const parallaxOffset = useParallax(0.5);
 

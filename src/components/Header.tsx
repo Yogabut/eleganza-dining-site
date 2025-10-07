@@ -35,9 +35,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="font-heading text-2xl font-bold text-primary">
-              Eleganza
-            </h1>
+            <img src="/logo.png" alt="" className='h-16' />
           </div>
 
           {/* Desktop Navigation */}
@@ -46,7 +44,7 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-colors duration-300 font-medium"
+                className="text-gray-400 hover:text-primary transition-colors duration-300 font-medium"
               >
                 {item.name}
               </a>
